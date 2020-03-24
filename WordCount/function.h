@@ -4,8 +4,9 @@
 using namespace std;
 
 class WordCount {
-public:
+private:
 	ifstream file;
+public:
 	WordCount(char *str) {
 		file.open(str);
 	}

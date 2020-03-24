@@ -22,6 +22,12 @@ int main(int argc, char **argv)
 			cout << "输入错误\n";
 			return 0;
 		}
+		else {
+			if (argv[i][1] != 'c' && argv[i][1] != 'w' && argv[i][1] != 'l') {
+				cout << "无此操作\n";
+				return 0;
+			}
+		}
 	}
 	for (i = 1; i < argc-1; i++) {
 		switch (argv[i][1]) {
