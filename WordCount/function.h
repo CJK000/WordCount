@@ -3,6 +3,21 @@
 #include<fstream>
 using namespace std;
 
-unsigned int CountChar(ifstream &file);
-unsigned int CountWord(ifstream &file);
-unsigned int CountRow(ifstream &file);
+class WordCount {
+public:
+	ifstream file;
+	WordCount(char *str) {
+		file.open(str);
+	}
+	bool CheckFile() {
+		return file.is_open();
+	}
+	~WordCount()
+	{
+		file.close();
+	}
+	unsigned int CountChar();
+	unsigned int CountWord();
+	unsigned int CountRow();
+};
+

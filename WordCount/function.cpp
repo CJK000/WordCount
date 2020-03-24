@@ -2,11 +2,15 @@
 #include<cstring>
 #include<iostream>
 #include<fstream>
+#include"function.h"
 using namespace std;
 
 
 
-unsigned int CountChar(ifstream &file) {
+
+
+unsigned int WordCount::CountChar() {
+	file.clear();
 	file.seekg(ios::beg);
 	unsigned char_num = 0;
 	string str;
@@ -15,14 +19,14 @@ unsigned int CountChar(ifstream &file) {
 		getline(file, str);
 		char_num += str.length();
 	}
-	file.clear();
 	return char_num;
 }
 
 
 
-unsigned int CountWord(ifstream &file) {
+unsigned int WordCount::CountWord() {
 	int i;
+	file.clear();
 	file.seekg(ios::beg);
 	unsigned int word_num = 0;
 	string str;
@@ -42,14 +46,14 @@ unsigned int CountWord(ifstream &file) {
 			}
 		}
 	}
-	file.clear();
 	return word_num;
 }
 
 
 
 
-unsigned int CountRow(ifstream &file) {
+unsigned int WordCount::CountRow() {
+	file.clear();
 	file.seekg(ios::beg);
 	unsigned int row_num = 0;
 	string str;
@@ -58,7 +62,6 @@ unsigned int CountRow(ifstream &file) {
 		getline(file, str);
 		row_num++;
 	}
-	file.clear();
 	return row_num;
 }
 

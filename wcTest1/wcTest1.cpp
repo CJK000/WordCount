@@ -9,25 +9,21 @@ namespace wcTest1
 	TEST_CLASS(wcTest1)
 	{
 	public:
-
+		WordCount *file = new WordCount("test.c");
 		TEST_METHOD(TestCharCount)
 		{
-			ifstream file("test.c");
-			unsigned int char_num = CountChar(file);
+			unsigned int char_num = file->CountChar();
 			Assert::AreEqual(char_num, (unsigned int)91);
-
 		}
 		TEST_METHOD(TestWordCount)
 		{
-			ifstream file("test.c");
-			unsigned int word_num = CountWord(file);
+			unsigned int word_num = file->CountWord();
 			Assert::AreEqual(word_num, (unsigned int)12);
 
 		}
 		TEST_METHOD(TestRowCount)
 		{
-			ifstream file("test.c");
-			unsigned int row_num = CountRow(file);
+			unsigned int row_num = file->CountRow();
 			Assert::AreEqual(row_num, (unsigned int)15);
 
 		}

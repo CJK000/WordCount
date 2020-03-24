@@ -10,8 +10,8 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	ifstream file(argv[argc-1]);
-	if (!file.is_open()) {
+	WordCount *file = new WordCount(argv[argc-1]);
+	if (!file->CheckFile()) {
 		cout << "这是一个无效的文件名\n";
 		return 0;
 	}
@@ -27,24 +27,24 @@ int main(int argc, char **argv)
 		switch (argv[i][1]) {
 			unsigned int num;
 			case 'c': {
-				num = CountChar(file);
+				num = file->CountChar();
 				cout << "字符数：" << num << endl;
 				break;
 			}
 			case 'w': {
-				num = CountWord(file);
+				num = file->CountWord();
 				cout << "词数：" << num << endl;
 				break;
 			}
 			case 'l': {
-				num = CountRow(file);
+				num = file->CountRow();
 				cout << "行数：" << num << endl;
 				break;
 			}
 			default: break;
 		}
 	}
-	file.close();
+	delete file;
 	return 0;
 }
 
