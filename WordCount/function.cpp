@@ -33,10 +33,10 @@ unsigned int WordCount::CountWord() {
 	while (!file.eof())
 	{
 		getline(file, str);
-		bool isWord = false;
+		bool isWord = false;	//标记当前字符是否为一个单词部分
 		for (i = 0; i < (int)str.length(); i++) {
-			if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
-				if (isWord == false) {
+			if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {	//当前字符是一个字母
+				if (isWord == false) {	//如果前一个字符不是单词的一部分，那单词数加一，改变标记
 					word_num++;
 					isWord = true;
 				}

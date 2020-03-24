@@ -13,12 +13,12 @@ namespace wcTest1
 		TEST_METHOD(TestCharCount)
 		{
 			unsigned int char_num = file->CountChar();
-			Assert::AreEqual(char_num, (unsigned int)91);
+			Assert::AreEqual(char_num, (unsigned int)89);
 		}
 		TEST_METHOD(TestWordCount)
 		{
 			unsigned int word_num = file->CountWord();
-			Assert::AreEqual(word_num, (unsigned int)12);
+			Assert::AreEqual(word_num, (unsigned int)11);
 
 		}
 		TEST_METHOD(TestRowCount)
